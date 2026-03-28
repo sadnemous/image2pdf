@@ -44,3 +44,23 @@ python image2pdf.py /path/to/your/photos --ext jpg,png --resize 100 -o notes.pdf
 ```
 
 The script will write intermediate PNGs into `./png` and ask whether to delete them after creating the PDF.
+
+Deskew / Auto-rotate
+
+- You can enable auto-rotation and deskewing with `--deskew`.
+- This uses OpenCV and (optionally) Tesseract OCR to detect orientation and skew.
+- System dependency: install the `tesseract-ocr` package on your OS for best results.
+
+On Ubuntu/Debian:
+
+```bash
+sudo apt install tesseract-ocr libtesseract-dev
+```
+
+Then install Python deps and run with `--deskew`:
+
+```bash
+./setup.sh
+. venv/bin/activate
+python image2pdf.py /path --ext jpg,png --deskew -o notes.pdf
+```
