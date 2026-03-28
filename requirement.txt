@@ -1,3 +1,6 @@
 pillow
 pillow-heif
 reportlab
+opencv-python
+pytesseract
+numpy
